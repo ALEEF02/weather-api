@@ -20,7 +20,7 @@ app.get("/forecast/:latLong", function(req, res, next) {
     .get(
       `https://api.darksky.net/forecast/${DARKSKY_API_KEY}/${
         req.params.latLong
-      }?units=si`
+      }?units=auto`
     )
     .then(resp => res.send(resp.data))
     .catch(next);
