@@ -1,12 +1,18 @@
 {
   "name": "Weather API wrapper",
   "description": "Darksky API wrapper. Required to avoid CORS error. Used in https://basicreact.com course.",
-  "repository": "https://github.com/satansdeer/weather-api",
+  "repository": "https://github.com/ALEEF02/weather-api",
   "logo": "https://raw.githubusercontent.com/satansdeer/weather-api/master/darksky-icon.jpg",
   "keywords": ["node", "express", "static"],
   "env": {
-    "DARKSKY_API_KEY": {
-      "description": "Secret key to access Darksky API endpoints."
+    "API_KEY": {
+      "description": "Secret key to access AmbientWeather API endpoints."
+    },
+    "APPLICATION_KEY": {
+      "description": "Application key granter by AmbientWeather"
+    },
+    "MAC_ADDRESS": {
+      "description": "MAC Address of your weather station"
     }
   }
 }
