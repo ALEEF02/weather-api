@@ -1,4 +1,4 @@
-# Darksky API Wrapper
+# AmbientWeather API Wrapper
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
