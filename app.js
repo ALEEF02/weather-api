@@ -4,7 +4,9 @@ const app = express();
 
 require("dotenv").load();
 
-const DARKSKY_API_KEY = process.env.DARKSKY_API_KEY;
+const API_KEY = process.env.API_KEY;
+const APPLICATION_KEY = process.env.APPLICATION_KEY;
+const MAC_ADDRESS = process.env.MAC_ADDRESS;
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -15,12 +17,10 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.get("/forecast/:latLong", function(req, res, next) {
+app.get("/current/:limit", function(req, res, next) {
   axios
     .get(
-      `https://api.darksky.net/forecast/${DARKSKY_API_KEY}/${
-        req.params.latLong
-      }?units=auto`
+        `https://api.ambientweather.net/v1/devices/${MAC_ADDRESS}?apiKey=${API_KEY}&applicationKey=${APPLICATION_KEY}&limit=${req.params.limit}`
     )
     .then(resp => res.send(resp.data))
     .catch(next);
